@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { UserModule } from './user/user.module';
+import { HelloModule } from './hello/hello.module';
+
+// root module - use all the sub module
 
 @Module({
-  imports: [AuthModule, UserModule],
+  imports: [HelloModule],
   controllers: [AppController],
   providers: [AppService],
 })
