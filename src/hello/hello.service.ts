@@ -7,4 +7,8 @@ export class HelloService {
   getHello(): string {
     return 'Hello is Calling from NEST JS';
   }
+
+  getHelloWithName(name: string): string {
+    return `Hello ${name}!`;
+  }
 }
