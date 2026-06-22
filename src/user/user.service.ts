@@ -21,4 +21,17 @@ export class UserService {
       },
     ];
   }
+
+  getUserById(id: number) {
+    const user = this.getAllUser().find((user) => user.id === id);
+    return user;
+  }
+
+  getWelcomeMessage(userId: number) {
+    const user = this.getUserById(userId);
+    if (!user) {
+      return 'User not Found';
+    }
+    return this.helloService.getHelloWithName(user?.name);
+  }
 }
